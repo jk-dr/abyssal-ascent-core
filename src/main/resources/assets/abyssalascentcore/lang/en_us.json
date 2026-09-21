@@ -1,0 +1,54 @@
+{
+  "message.abyssalascentcore.welcome": "Welcome to Abyssal Ascent",
+
+  "message.abyssalascentcore.canBreakIn": "This pickaxe can break it in: %s",
+  "message.abyssalascentcore.failedBlockBreak": "Your pickaxe is too weak to break this block!",
+
+  "tooltip.abyssalascentcore.breaks_through": "Breaks through %s",
+
+  "message.abyssalascentcore.prefix": "<Abyssal Ascent>",
+  "message.abyssalascentcore.discordnotice": "%s Join the Abyssal Ascent Discord: %s\nPlease check #known-bugs before creating a ticket or asking about bugs in #general.",
+  "message.abyssalascentcore.structurepos": "%s There has been an update to Abyssal Ascent since you last played, there is now a structure at [X : %s, Y : %s, Z: %s] where world spawn is located",
+
+  "message.abyssalascentcore.gc_hint": "%s If you are experiencing stuttering with Distant Horizons enabled, switching to the ZGC garbage collector can improve stability.",
+
+  "message.abyssalascentcore.bug_report": "Abyssal Ascent Core is currently under development. It may occur that bugs interrupt your playthrough which is why we need your help to patch them. To report a bug, state the bug and ping @cobster in the discord server (found by doing /aa discord)",
+
+  "message.abyssalascentcore.summons_target_set": "Your summons will now target: %s",
+  "message.abyssalascentcore.summons_target_query": "Your summons target: %s",
+  "message.abyssalascentcore.summons_mode.all_players": "All players",
+  "message.abyssalascentcore.summons_mode.opponents": "Players outside your team",
+  "message.abyssalascentcore.summons_mode.ignore_players": "No players",
+
+  "message.abyssalascentcore.summons_target_cooldown": "You can change this again in %s second(s)",
+  "message.abyssalascentcore.summons_called_off": "%s of your summons stopped attacking a player",
+  "message.abyssalascentcore.summons_can_attack": "Your summons can attack other players, to disable this type /aa summons_target ignore_players",
+  "message.abyssalascentcore.summon_protected": "This summon can't attack you, so you can't attack it",
+
+  "message.abyssalascentcore.help.header": "Abyssal Ascent commands:",
+  "message.abyssalascentcore.help.help": "/aa help - shows this list",
+  "message.abyssalascentcore.help.locator": "/aa locator <team|global> <disable|dot-only|enable> - what you share on the depth bar, with your team or everyone else",
+  "message.abyssalascentcore.help.locator_query": "/aa locator query - shows your locator settings",
+  "message.abyssalascentcore.help.summons_target": "/aa summons_target [all_players|opponents|ignore_players] - which players your summons may target",
+  "message.abyssalascentcore.help.bug_report": "/aa bug_report - how to report a bug",
+  "message.abyssalascentcore.help.reload_rules": "/aa debug reload_rules - reloads the mining rules (operators)",
+  "message.abyssalascentcore.help.tunnel": "/aa debug tunnel [radius] - clears a shaft through every dimension of the stack (operators)",
+  "message.abyssalascentcore.help.discord": "/aa discord - shows the Discord invite",
+
+  "message.abyssalascentcore.tunnel_done": "Cleared %s block(s) in %s dimension(s)",
+
+  "message.abyssalascentcore.rules_reloaded": "Reloaded %s mining rule(s)",
+
+  "message.abyssalascentcore.locator_set": "Locator for %s: %s",
+  "message.abyssalascentcore.locator_query": "Locator: Your team %s; Everyone else %s",
+  "message.abyssalascentcore.locator_names_off": "This server has usernames turned off, so names are never shown.",
+  "message.abyssalascentcore.locator_scope.team": "your team",
+  "message.abyssalascentcore.locator_scope.global": "Everyone else",
+  "message.abyssalascentcore.locator_mode.disable": "off (no dots)",
+  "message.abyssalascentcore.locator_mode.dot-only": "dots only (no names)",
+  "message.abyssalascentcore.locator_mode.enable": "dots and names",
+
+  "screen.abyssalascentcore.depth_meter": "Depth Meter Config",
+  "screen.abyssalascentcore.depth_meter.x": "X Offset:  ",
+  "screen.abyssalascentcore.depth_meter.y": "Y Offset:  "
+}

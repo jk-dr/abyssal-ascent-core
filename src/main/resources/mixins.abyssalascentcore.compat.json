@@ -1,0 +1,95 @@
+{
+  "required": false, // We don't want to force the player into support so it is completely optional
+  "package": "com.jkdr.abyssalascentcore.mixins.compat",
+  "refmap": "mixins.abyssalascentcore.refmap.json",
+  "plugin": "com.jkdr.abyssalascentcore.mixins.compat.DisableImmPtlIrisMixinsPlugin",
+  "priority": 2000, // Important: Use high priority here to ensure our mixins get applied and not immersive portals just in case
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    // C2ME compatility
+    // takes these methods off of the server thread onto the chunk loading thread
+    // Iron's Spellbooks raycasts through Immersive Portals (Blink, Portal, and portal-plane stop for other spells)
+    "ironsspellbooks.MixinTeleportSpell",
+    "ironsspellbooks.MixinPortalSpell",
+    "ironsspellbooks.MixinUtilsRaycast",
+    "ironsspellbooks.MixinEntityTeleportTo",
+    "ironsspellbooks.MixinServerPlayerTeleportTo",
+
+    // No fall damage while a fast fall is held at a stack portal waiting for the far side to load
+    "immptl.MixinServerPlayerFallAtStack",
+    "immptl.MixinLivingEntityFallAtStack",
+
+    // Load the far side of a stack portal wider while the player falls or rises fast
+    "immptl.MixinChunkVisibilityFastFall",
+
+    // Sneaking on a block from the other dimension of a dimension stack
+    "immptl.MixinPlayerSneakEdge",
+    "immptl.MixinEntityCanEnterPose",
+
+    // Immersive Aircraft: keep the aircraft where its seat puts the pilot when they ride through a portal
+    "immptl.MixinMcHelperVehicleOffset",
+
+    "immptl.MixinDimStackInfoMessage",
+    "immptl.MixinBlockItemPlacement",
+
+    // Waystones prices a waystone across a dimension stack by distance through the stack instead of a flat cost
+    "waystones.MixinPlayerWaystoneManager",
+
+    // Advancements that are granted but neither announced in chat nor shown as a toast
+    "advancements.MixinPlayerAdvancements",
+
+    // Infinite Abyss: Depth Resistance is no longer needed
+    "infiniteabyss.MixinSixthLayerPlayerEntersDimension",
+
+    "c2me.spartanweaponry.MixinItemRandomizer",
+    "c2me.aetherredux.MixinBlightwillowRootsPlacer"
+
+  ],
+  // Physical dedicated servers only: the reach check this wraps (the built-in anticheat) only exists
+  // there, so on the integrated (singleplayer/LAN) server the injection target is missing and would crash.
+  "server": [
+    "dedicatedserver.MixinServerPlayerGameModePatchForDedicatedServers"
+  ],
+  "client": [
+    "advancements.MixinToastComponent",
+    "advancements.AdvancementToastAccessor",
+    "immptl.AbstractSoundInstanceAccessor",
+
+    // Immersive Portals: register dimension-stack portals for the move about to happen (jump into blocks across the portal)
+    "immptl.MixinEntityPredictivePortalCollision",
+
+    // Jade names the block you look at through a portal, not a block from your own dimension
+    "jade.MixinJadeRayTracing",
+    "jade.MixinJadeWailaTickHandler",
+    "jade.MixinJadeClientBreakingProgress",
+
+    // Immersive Portals: entities half through a portal are drawn whole when Iris is installed but no shader pack is running
+    "immptl.MixinCrossPortalEntityRendering",
+
+    // Immersive Portals + Immersive Aircraft: the view through a portal keeps the camera rotation and the aircraft's tilt
+    "immptl.MixinWorldRenderInfoAircraftTilt",
+
+    // Distant Horizons' own chat warnings (Alex's Caves, G1 collector, Immersive Portals mixin)
+    "distanthorizons.MixinChatComponentDhWarnings",
+
+    // Sound of mining a block in another dimension
+    "immptl.MixinMultiPlayerGameModeMiningSound",
+
+    // Oculus 1.8.0 / Iris compatibility
+    // Replaces old imports with the prefix "coderbot" with the new ones "irisshaders"
+    "oculus.immptl.MixinExperimentalIrisPortalRenderer",
+    "oculus.immptl.MixinOnIrisPresent",
+    "oculus.immptl.MixinPortalRenderer",
+    "oculus.immptl.MixinIExpIrisPortalRenderer",
+
+    "oculus.immptl.replace.MixinIrisClearPass",
+    "oculus.immptl.replace.MixinIrisFinalPassRenderer",
+    "oculus.immptl.replace.MixinIrisRenderingPipeline",
+    "oculus.immptl.replace.MixinIrisShadowRenderTargets",
+    "oculus.immptl.replace.MixinIrisSodiumChunkShaderInterface",
+    "oculus.immptl.replace.MixinIrisSodiumSodiumTerrainPipeline"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "_help": [
+    "Controls which pickaxe can break which blocks in which dimension.",
+    "pickaxe_tiers: tier number -> items (or #tags). A higher tier can break everything a lower tier can.",
+    "dimensions: dimension id -> rule. A rule applies to `blocks` (ids or #tags) at or above `min_y`.",
+    "  min_tier: lowest pickaxe tier allowed to break those blocks there.",
+    "  min_y:    optional. Blocks below this height are not restricted (speeds up the check).",
+    "Dimensions that are not listed have no restrictions.",
+    "Non-player breaking (explosions, other mods) of listed blocks is always blocked.",
+    "Reload in game with /aa debug reload_rules (requires OP to prevent spam)",
+    "New players will already recieve the update when they join the server through packets",
+    "This allows server owners to customise their experience if they wish."
+  ],
+
+  "pickaxe_tiers": {
+    "1": ["kubejs:arcane_steel_pickaxe", "minecraft:netherite_pickaxe"],
+    "2": ["kubejs:ignitium_pickaxe"],
+    "3": ["cataclysm:black_steel_pickaxe"],
+    "4": ["kubejs:tectonic_abyssal_pickaxe"]
+  },
+
+  "dimensions": {
+    "undergarden:undergarden": {
+      "min_tier": 1,
+      "blocks": ["minecraft:obsidian", "kubejs:hard_depthrock"]
+    },
+    "minecraft:the_nether": {
+      "min_tier": 2,
+      "min_y": 250,
+      "blocks": ["minecraft:obsidian"]
+    },
+    "dimension_of_caves:cave": {
+      "min_tier": 3,
+      "min_y": 123,
+      "blocks": ["minecraft:obsidian"]
+    },
+    "infernalcross:dimension": {
+      "min_tier": 3,
+      "min_y": 59,
+      "blocks": ["minecraft:packed_mud", "alexscaves:coprolith", "alexscaves:guanostone", "minecraft:obsidian", "infinite_abyss:red_deepstone", "infinite_abyss:fire_crystal", "infinite_abyss:glowing_red_crystal", "infinite_abyss:opal_ore"]
+    },
+    "deeperdarker:otherside": {
+      "min_tier": 4,
+      "min_y": 123,
+      "blocks": ["minecraft:obsidian"]
+    },
+    "infinite_abyss:first_layer": {
+      "min_tier": 4,
+      "min_y": 123,
+      "blocks": ["minecraft:obsidian"]
+    }
+  }
+}
