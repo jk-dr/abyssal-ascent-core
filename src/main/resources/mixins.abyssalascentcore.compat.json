@@ -48,7 +48,6 @@
   // Physical dedicated servers only: the reach check this wraps (the built-in anticheat) only exists
   // there, so on the integrated (singleplayer/LAN) server the injection target is missing and would crash.
   "server": [
-    "dedicatedserver.MixinServerPlayerGameModePatchForDedicatedServers"
   ],
   "client": [
     "advancements.MixinToastComponent",

@@ -7,6 +7,9 @@
     "patch.dimchange.MixinServerTeleportationManager",
     "patch.spawn.MixinRecallSpell",
     "patch.blockbreaking.MixinServerPlayerGameModePatchForClientAndServers",
+    // canReachRaw is called from handleBlockBreakAction in every environment (confirmed by disassembling the class as
+    // loaded on a physical client's integrated server, not just a dedicated one), so this applies unconditionally.
+    "patch.blockbreaking.MixinServerPlayerGameModePatchForDedicatedServers",
 
     "invokers.MixinTrunkPlacer",
 

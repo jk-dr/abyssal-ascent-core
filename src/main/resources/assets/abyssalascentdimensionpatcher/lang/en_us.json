@@ -1,0 +1,8 @@
+{
+  "message.abyssalascentdimensionpatcher.welcome": "\n\n\n%s Welcome to Abyssal Ascent if you have any questions regarding the modpack or issues you face you can find the discord link by typing /%s or %s",
+
+  "message.abyssalascentdimensionpatcher.discordnotice": "\n\n\n%s %s\nPLEASE NOTE: Please ensure before creating a ticket or asking questions regarding bugs in #general please visit the #known-bugs channel and see if your issue is listed there",
+
+  "message.abyssalascentdimensionpatcher.structurepos": "%s There has been an update to Abyssal Ascent since you last played, there is now a structure at [X : %s, Y : %s, Z: %s] where world spawn is located",
+  "message.abyssalascentdimensionpatcher.failedBlockBreak": "Your pickaxe is too weak to break this block!"
+}
